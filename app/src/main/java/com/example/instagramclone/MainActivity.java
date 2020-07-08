@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseQuery;
@@ -35,12 +36,16 @@ import java.util.List;
 
 import fragments.ComposeFragment;
 import fragments.PostsFragment;
+import fragments.ProfileFragment;
+import fragments.SignoutFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +64,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_compose:
                         fragment = new ComposeFragment();
                         break;
+                    case R.id.action_signout:
+                        fragment = new SignoutFragment();
+                        break;
                     case R.id.action_profile:
-                        fragment = new ComposeFragment();
                     default:
-                        fragment = new ComposeFragment();
+                        fragment = new ProfileFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
@@ -70,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         bottomNavigationView.setSelectedItemId(R.id.action_home);
+    }
+
+    private void goToStartScreen() {
+        Intent goToStartScreen = new Intent(this, LoginActivity.class);
+        startActivity(goToStartScreen);
+        finish();
     }
 
 

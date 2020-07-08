@@ -8,13 +8,18 @@
         android:title="Home"
         app:showAsAction="always" />
     <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_compose"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="Compose"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_profile"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="Profile"
+        android:id="@+id/action_signout"
+        android:icon="@android:drawable/presence_offline"
+        android:title="Sign out"
         app:showAsAction="always" />
 </menu>
