@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 import java.util.List;
 
+// new since Glide v4
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
     private Context context;
