@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         if(ParseUser.getCurrentUser() != null){
             goMainActivity();
         }
@@ -53,9 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.i(TAG, "onClick signup button");
-                String newName = etUsername.getText().toString();
-                String newPword = etPassword.getText().toString();
-                signUp(newName, newPword);
+                signUp(etUsername.getText().toString(), etPassword.getText().toString());
             }
         });
     }
@@ -82,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void loginUser(String username, String password) {
@@ -91,7 +87,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (e != null) {
-                    // Better error handling
                     Log.e(TAG, "Issue with login", e);
                     return;
                 }

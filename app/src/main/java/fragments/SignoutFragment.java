@@ -6,28 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.instagramclone.LoginActivity;
-import com.example.instagramclone.MainActivity;
-import com.example.instagramclone.PostsAdapter;
 import com.example.instagramclone.R;
 import com.parse.ParseUser;
 
-import java.util.ArrayList;
-
 public class SignoutFragment extends Fragment {
     protected Button btnSignout;
-
     public SignoutFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

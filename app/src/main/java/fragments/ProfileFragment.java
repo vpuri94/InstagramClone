@@ -1,13 +1,11 @@
 package fragments;
 
 import android.util.Log;
-
 import com.example.instagramclone.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
 import java.util.List;
 
 public class ProfileFragment extends PostsFragment {
@@ -18,6 +16,7 @@ public class ProfileFragment extends PostsFragment {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
         query.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
+        // Refresh 20 latest posts
         query.setLimit(20);
         query.addDescendingOrder(Post.KEY_CREATED_AT);
         query.findInBackground(new FindCallback<Post>() {
